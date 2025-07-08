@@ -66,7 +66,7 @@ In `package.json` file
 ```json
 "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
-    "lint": "npx eslint",
+    "lint": "npx eslint ./src",
     "lint:fix": "npx eslint . --fix",
     "build": "tsc"
 },
