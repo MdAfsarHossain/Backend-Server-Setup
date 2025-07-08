@@ -46,6 +46,14 @@ npm i cors --save-dev @types/cors
 npm i ts-node-dev
 ```
 
+```ts
+npm i express mongoose zod jsonwebtoken cors dotenv
+```
+
+```ts
+npm i -D ts-node-dev @types/express @types/cors @types/dotenv @types/jsonwebtoken
+```
+
 In `package.json` file
 
 ```json
