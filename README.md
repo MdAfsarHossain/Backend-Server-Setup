@@ -8,6 +8,7 @@
 - [Express](https://expressjs.com/)
 - [DotEnv](https://www.npmjs.com/package/dotenv)
 - [TS Node Dev](https://www.npmjs.com/package/ts-node-dev)
+- [TypeScript ESlint](https://typescript-eslint.io/getting-started)
 
 ### Installation
 
@@ -52,6 +53,12 @@ npm i express mongoose zod jsonwebtoken cors dotenv
 
 ```ts
 npm i -D ts-node-dev @types/express @types/cors @types/dotenv @types/jsonwebtoken
+```
+
+## [TypeScript ESlint](https://typescript-eslint.io/getting-started)
+
+```ts
+npm install --save-dev eslint @eslint/js typescript typescript-eslint
 ```
 
 In `package.json` file
