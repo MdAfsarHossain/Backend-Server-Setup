@@ -397,6 +397,70 @@ routes.use("/order", orderRoute);
 export default routes;
 ```
 
+## [Global Error Handler Code]()
+
+add this error code into the `server.ts` file.
+
+```ts
+process.on("SIGTERM", () => {
+  console.log("SIGTERM signal recieved... Server sutting down..");
+
+  if (server) {
+    server.close(() => {
+      process.exit(1);
+    });
+  }
+
+  process.exit(1);
+});
+```
+
+```ts
+process.on("SIGINT", () => {
+  console.log("SIGING signal recieved... Server shutting down..");
+
+  if (server) {
+    server.close(() => {
+      process.exit(1);
+    });
+  }
+
+  process.exit(1);
+});
+```
+
+```ts
+process.on("unhandledRejection", (err) => {
+  console.log("Unhandled Rejection detected... Server shutting down..", err);
+
+  if (server) {
+    server.close(() => {
+      process.exit(1);
+    });
+  }
+
+  process.exit(1);
+});
+// Unhandler rejection error
+// Promise.reject(new Error("I forgot to catch this promise."));
+```
+
+```ts
+process.on("uncaughtException", (err) => {
+  console.log("Uncaught Exception detected... Server sutting down..", err);
+
+  if (server) {
+    server.close(() => {
+      process.exit(1);
+    });
+  }
+
+  process.exit(1);
+});
+// Uncaught Exception Error
+// throw new Error("I forgot to handle this local error");
+```
+
 ## [Vercel Setup]()
 
 ### 1. Create `vercel.json` file
