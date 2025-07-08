@@ -195,6 +195,37 @@ async function server() {
 server();
 ```
 
+### 1 `server.ts`-(V1)
+
+```ts
+/* eslint-disable no-console */
+import { Server } from "http";
+import mongoose from "mongoose";
+import app from "./app";
+import { envVars } from "./app/config/env";
+
+let server: Server;
+
+const startServer = async () => {
+  try {
+    // console.log(envVars.NODE_ENV);
+    await mongoose.connect(envVars.DB_URL);
+
+    console.log("Connected to DB!");
+
+    server = app.listen(envVars.PORT, () => {
+      console.log(`Server is listening to port ${envVars.PORT}!`);
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+startServer();
+
+// Write here all global error handler code
+```
+
 ### 2. `src/config/index.ts`
 
 ```ts
